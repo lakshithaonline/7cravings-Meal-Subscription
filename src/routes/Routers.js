@@ -6,6 +6,8 @@ import Pizzas from "../pages/Pizzas";
 import PizzaDetails from "../pages/PizzaDetails";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
+import SignUp from "../pages/RegistrationPage";
+import SignIn from "../pages/LoginPage";
 
 const Routers = () => {
   return (
@@ -16,6 +18,8 @@ const Routers = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/pizzas/:id" element={<PizzaDetails />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
 };

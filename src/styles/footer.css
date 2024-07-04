@@ -1,11 +1,12 @@
 .footer {
-  padding: 50px 0px;
+  padding: 50px 0;
   background: #fde4e4;
   display: flex;
   text-align: start;
   justify-content: center;
   gap: 8rem;
   align-items: center;
+  color: #333;
 }
 
 .footer__logo img {
@@ -46,6 +47,60 @@
   font-size: 1.1rem;
   color: #212245;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer__logo,
+.footer__delivery-time,
+.footer__contact,
+.footer__newsletter {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.newsletter__input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.newsletter__input input {
+  flex: 1;
+  padding: 5px;
+}
+
+.newsletter__input button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+
+.footer__social-links a {
+  color: #333;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.footer__social-links a:hover {
+  color: red;
 }
 
 @media only screen and (max-width: 768px) {
@@ -72,3 +127,29 @@
     margin-bottom: 0;
   }
 }
+
+.footer__social-media {
+  margin-top: 20px; /* Add margin-top to separate from newsletter input */
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: red; /* Change color on hover */
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+

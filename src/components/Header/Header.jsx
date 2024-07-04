@@ -99,11 +99,16 @@ const Header = () => {
               <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>
             </span>
-            
+
+            <Link to="/signin" className="profile__icon">
+              <i className="ri-user-line"></i> {/* Replace with your profile icon */}
+            </Link>
+
             <span className="mobile__menu" onClick={toggleMenu}>
               <i className="ri-menu-line"></i>
             </span>
           </div>
+
         </div>
       </Container>
     </header>

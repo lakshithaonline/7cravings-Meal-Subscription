@@ -7,6 +7,7 @@ import ProductCard from "../components/UI/product-card/ProductCard";
 import Helmet from "../components/Helmet/Helmet";
 import ReactPaginate from "react-paginate";
 import "../styles/pagination.css";
+import CommonSection from "../components/UI/common-section/CommonSection";
 
 const Pizzas = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -28,6 +29,7 @@ const Pizzas = () => {
 
   return (
     <Helmet title="All Pizzas">
+      <CommonSection title="Meal Kit Selection" />
       <Container>
         <Row>
           {displayPage.map((item) => (

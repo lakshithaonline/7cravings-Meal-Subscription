@@ -4,39 +4,71 @@ import { Container, Row, Col } from "reactstrap";
 
 import { Link } from "react-router-dom";
 
-import guyImg from "../assets/images/delivery-guy.png";
+import deliveryImg from "../assets/images/heroNEW.png";
 import "../styles/hero-section.css";
 
 const Home = () => {
   return (
-    <Helmet title="Home">
-      <section>
-        <Container>
-          <Row>
-            <Col lg="6" md="6">
-              <div className="hero__content">
-                <h5 className="mb-3">Easy order & fast delivery</h5>
-                <h1 className="mb-4 hero__title">
-                  <span>Enjoy</span> your favorite Pizza
-                </h1>
+      <Helmet title="Home">
+        <section>
+          <Container className="vh-100" component="main" maxWidth="xs">  {/*remove this after adding contents  className="vh-100" component="main" maxWidth="xs"*/}
+            <Row>
+              <Col lg="6" md="6">
+                <div className="hero__content">
+                  <h5 className="mb-3">Weekly Meal Kits</h5>
+                  <h1 className="mb-4 hero__title">
+                    Enjoy Personalized Meals <br /> for Every Goal
+                  </h1>
 
-                <button className="order__btn d-flex align-items-center justify-content-between ">
-                  <Link to="/pizzas">
-                    Menu <i className="ri-arrow-right-s-line"></i>
+                  <p className="mb-4">
+                    Discover our diverse menu tailored to your lifestyle. From
+                    healthy choices to high protein and weight loss supportive
+                    meals, we have options to support your goals.
+                  </p>
+
+                  <Link to="/menu" className="order__btn">
+                    Choose Meal Kit
                   </Link>
-                </button>
-              </div>
-            </Col>
+                  <Link
+                      to="/how-this-works"
+                      className="order__btn"
+                      style={{
+                        marginLeft: '10px',
+                        padding: '8px 16px',
+                        border: '2px solid #212245',
+                        borderRadius: '5px',
+                        backgroundColor: 'transparent',
+                        color: '#212245',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '47px',
+                        transition: 'background-color 0.3s, color 0.3s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = '#212245';
+                        e.target.style.color = '#ffffff';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = 'transparent';
+                        e.target.style.color = '#212245';
+                      }}
+                  >
+                    How it works <i className="ri-arrow-right-s-line" style={{ marginLeft: '5px' }}></i>
+                  </Link>
+                </div>
+              </Col>
 
-            <Col lg="6" md="6">
-              <div className="hero__img">
-                <img src={guyImg} alt="delivery-guy" className="w-100" />
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    </Helmet>
+              <Col lg="6" md="6">
+                <div className="hero__img">
+                  <img src={deliveryImg} alt="delivery-guy" className="w-100" />
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      </Helmet>
   );
 };
 

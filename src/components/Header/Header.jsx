@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Container } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/logodymmy_copped.png";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -64,8 +64,8 @@ const Header = () => {
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo" onClick={() => navigate("/home")}>
-            <img src={logo} alt="logo" />
-            <h5>Tasty Treat</h5>
+            {/*<img src={logo} alt="logo" />*/}
+            {/*<h5>Tasty Treat</h5>*/}
           </div>
           {/* ======= menu ======= */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>

@@ -3,23 +3,23 @@
 // import product_01_image_02 from "../images/product_01.1.jpg";
 // import product_01_image_03 from "../images/product_01.3.jpg";
 
-import product_02_image_01 from "../images/product_2.1.jpg";
+import Grilled_Salmon_with_Quinoa from "../images/Grilled_Salmon_with_Quinoa.png";
 import product_02_image_02 from "../images/product_2.2.jpg";
 import product_02_image_03 from "../images/product_2.3.jpg";
 
-import product_03_image_01 from "../images/product_3.1.jpg";
+import Vegetarian_Buddha_Bowl from "../images/Vegetarian_Buddha_Bowl.jpg";
 import product_03_image_02 from "../images/product_3.2.jpg";
 import product_03_image_03 from "../images/product_3.3.jpg";
 
-import product_04_image_01 from "../images/product_4.1.jpg";
+import Protein_Pancakes from "../images/Protein_Pancakes.jpg";
 import product_04_image_02 from "../images/product_4.2.jpg";
 import product_04_image_03 from "../images/product_4.3.png";
 
-import product_05_image_01 from "../images/product_04.jpg";
+import Mediterranean_Salad from "../images/Mediterranean_Salad.jpg";
 import product_05_image_02 from "../images/product_08.jpg";
 import product_05_image_03 from "../images/product_09.jpg";
 
-import product_06_image_01 from "../images/bread(1).png";
+import Chicken_Stir_Fry from "../images/Chicken_Stir_Fry.jpg";
 import product_06_image_02 from "../images/bread(2).png";
 import product_06_image_03 from "../images/bread(3).png";
 
@@ -29,7 +29,7 @@ const products = [
     id: "1",
     title: "Grilled Salmon with Quinoa",
     price: 12.99,
-    image01: product_02_image_01,
+    image01: Grilled_Salmon_with_Quinoa,
     image02: product_02_image_02,
     image03: product_02_image_03,
     meal_category: "High Protein",
@@ -41,7 +41,7 @@ const products = [
     id: "2",
     title: "Vegetarian Buddha Bowl",
     price: 10.49,
-    image01: product_03_image_01,
+    image01: Vegetarian_Buddha_Bowl,
     image02: product_03_image_02,
     image03: product_03_image_03,
     meal_category: "Healthy Choices",
@@ -53,7 +53,7 @@ const products = [
     id: "3",
     title: "Protein Pancakes",
     price: 8.99,
-    image01: product_04_image_01,
+    image01: Protein_Pancakes,
     image02: product_04_image_02,
     image03: product_04_image_03,
     meal_category: "High Protein",
@@ -65,7 +65,7 @@ const products = [
     id: "4",
     title: "Mediterranean Salad",
     price: 9.99,
-    image01: product_05_image_01,
+    image01: Mediterranean_Salad,
     image02: product_05_image_02,
     image03: product_05_image_03,
     meal_category: "Healthy Choices",
@@ -77,7 +77,7 @@ const products = [
     id: "5",
     title: "Chicken Stir-Fry",
     price: 11.49,
-    image01: product_06_image_01,
+    image01: Chicken_Stir_Fry,
     image02: product_06_image_02,
     image03: product_06_image_03,
     meal_category: "Quick Meals",

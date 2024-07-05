@@ -14,12 +14,14 @@ const Routers = () => {
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
+        {/*<Route path"/how-this-works" element={</>} />*/}
       <Route path="/pizzas" element={<MealKits />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/pizzas/:id" element={<PizzaDetails />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+
     </Routes>
   );
 };

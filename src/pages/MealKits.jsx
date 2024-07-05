@@ -13,7 +13,7 @@ import {
   Typography,
   Accordion,
   AccordionSummary,
-  AccordionDetails, ToggleButton, ToggleButtonGroup,
+  AccordionDetails, ToggleButton, ToggleButtonGroup, Paper,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import products from '../assets/fake-data/products';
@@ -122,24 +122,46 @@ const MealKits = () => {
                   />
                 </form>
               </Box>
-              <Box mb={2} width="100%" display="flex" justifyContent="center">
-                <ToggleButtonGroup
-                    value={selectedDay}
-                    exclusive
-                    onChange={handleDayChange}
-                    aria-label="day selector"
-                >
-                  {Array.from({ length: 7 }, (_, i) => (
-                      <ToggleButton key={i} value={`${i + 1}/7`} aria-label={`${i + 1}/7`}>
-                        {`${i + 1}/7`}
-                      </ToggleButton>
-                  ))}
-                </ToggleButtonGroup>
+              <Box mb={2} display="flex" justifyContent="center">
+                <Paper elevation={3} sx={{ width: '350px', padding: '16px', position: 'relative', border: '1px solid #c2c2c2', boxShadow: 'none' }}>
+                  <Typography
+                      variant="caption"
+                      sx={{
+                        position: 'absolute',
+                        top: '-10px',
+                        left: '9px',
+                        backgroundColor: 'white',
+                        padding: '0 4px',
+                        borderColor: 'black',
+                        borderWidth: '1px'
+                      }}
+                  >
+                    Delivery Day
+                  </Typography>
+                  <ToggleButtonGroup
+                      value={selectedDay}
+                      exclusive
+                      onChange={handleDayChange}
+                      aria-label="day selector"
+                      fullWidth
+                  >
+                    {Array.from({ length: 7 }, (_, i) => (
+                        <ToggleButton key={i} value={`${i + 1}/7`} aria-label={`${i + 1}/7`}>
+                          {`${i + 1}/7`}
+                        </ToggleButton>
+                    ))}
+                  </ToggleButtonGroup>
+                </Paper>
               </Box>
               <Box mb={2} width="100%" display="flex" justifyContent="center">
                 <FormControl fullWidth style={{ maxWidth: '350px' }}>
                   <InputLabel id="meal-time-label">Meal Time</InputLabel>
-                  <Select labelId="meal-time-label" value={mealCategory} onChange={handleMethodTimeChange}>
+                  <Select
+                      labelId="meal-time-label"
+                      value={mealMethod}
+                      onChange={handleMethodTimeChange}
+                      label="Meal Time"
+                  >
                     <MenuItem value="All">All</MenuItem>
                     <MenuItem value="Breakfast">Breakfast</MenuItem>
                     <MenuItem value="Lunch">Lunch</MenuItem>
@@ -150,7 +172,12 @@ const MealKits = () => {
               <Box mb={2} width="100%" display="flex" justifyContent="center">
                 <FormControl fullWidth style={{ maxWidth: '350px' }}>
                   <InputLabel id="meal-category-label">Meal Category</InputLabel>
-                  <Select labelId="meal-category-label" value={mealCategory} onChange={handleCategoryChange}>
+                  <Select
+                      labelId="meal-category-label"
+                      value={mealCategory}
+                      onChange={handleCategoryChange}
+                      label="Meal Category"
+                  >
                     <MenuItem value="All">All</MenuItem>
                     <MenuItem value="Quick Meals">Quick Meals</MenuItem>
                     <MenuItem value="Healthy Choices">Healthy Choices</MenuItem>
@@ -161,7 +188,12 @@ const MealKits = () => {
               <Box mb={2} width="100%" display="flex" justifyContent="center">
                 <FormControl fullWidth style={{ maxWidth: '350px' }}>
                   <InputLabel id="meal-method-label">Meal Method</InputLabel>
-                  <Select labelId="meal-method-label" value={mealMethod} onChange={handleMethodTimeChange}>
+                  <Select
+                      labelId="meal-method-label"
+                      value={mealMethod}
+                      // onChange={handleMethodTimeChange}
+                      label="Meal Method"
+                  >
                     <MenuItem value="All">All</MenuItem>
                     <MenuItem value="Vegetarian">Vegetarian</MenuItem>
                     <MenuItem value="Gluten-free">Gluten-free</MenuItem>
@@ -169,7 +201,7 @@ const MealKits = () => {
                 </FormControl>
               </Box>
               <Box mb={2} width="100%" display="flex" justifyContent="center">
-                <Button variant="contained" color="primary" onClick={handleResetFilters} style={{width: '350px'}}>
+                <Button variant="contained" color="success" onClick={handleResetFilters} style={{width: '350px'}}>
                   Reset Filters
                 </Button>
               </Box>
@@ -177,7 +209,7 @@ const MealKits = () => {
             </Grid>
 
             {/* Middle (Item display) */}
-            <Grid item xs={12} lg={6} mt={5}>
+            <Grid item xs={12} lg={6} mt={5} container alignItems="center" direction="column">
               <Grid container spacing={3}>
                 {displayPage.map((item) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>

@@ -2,7 +2,7 @@ import React from "react";
 import { ListGroup } from "reactstrap";
 import { Facebook, Twitter, Instagram, LinkedIn } from "@mui/icons-material";
 
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/logodymmy_copped.png";
 import "../../styles/footer.css";
 
 const Footer = () => {
@@ -11,8 +11,9 @@ const Footer = () => {
         <div className="footer__container">
           <div className="footer__logo">
             <img src={logo} alt="logo"/>
-            <h5>Tasty Treat</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt pariatur accusamus.</p>
+            <h5>7Cravings</h5>
+            <p>Your partner in achieving your health goals. Discover our weekly meal kits
+              designed for your lifestyle, delivered fresh to your door.</p>
           </div>
           <div className="footer__delivery-time">
             <h5 className="footer__title mb-3">Delivery Time</h5>

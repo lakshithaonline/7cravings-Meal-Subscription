@@ -1,5 +1,13 @@
 .product__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid #fde4e4;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  width: 100%;
+  max-width: 350px; /* Adjust as needed */
   text-align: center;
   padding: 30px;
   cursor: pointer;
@@ -8,8 +16,10 @@
 }
 
 .product__img {
+  width: 100%;
+  height: auto;
   margin-bottom: 20px;
-  transition: 0.4s;
+  transition: transform 0.4s;
 }
 
 .product__img:hover {
@@ -18,7 +28,7 @@
 
 .product__content h5 a {
   color: #212245;
-  font-style: 1rem;
+  font-size: 1rem;
 }
 
 .product__content h5 {
@@ -47,7 +57,7 @@
   .product__item {
     padding: 20px;
   }
-  .addTOCart__btn {
+  .addTOCART__btn {
     padding: 5px 15px;
     font-size: 0.7rem;
   }

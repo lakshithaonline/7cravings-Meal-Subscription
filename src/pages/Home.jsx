@@ -30,7 +30,7 @@ const Home = () => {
                     Choose Meal Kit
                   </Link>
                   <Link
-                      to="/how-this-works"
+                      to="/how-it-works"
                       className="order__btn"
                       style={{
                         marginLeft: '10px',

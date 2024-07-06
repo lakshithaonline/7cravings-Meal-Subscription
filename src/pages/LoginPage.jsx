@@ -13,13 +13,15 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { auth } from '../services/firebaseConfig';  // Make sure to adjust the import path
+import { auth } from '../services/firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import {useNavigate} from "react-router-dom";
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -30,7 +32,7 @@ export default function SignIn() {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             console.log('User signed in successfully');
-            // Redirect or do something after successful login
+            navigate('/profile');
         } catch (error) {
             console.error('Error signing in:', error);
             setError(error.message);

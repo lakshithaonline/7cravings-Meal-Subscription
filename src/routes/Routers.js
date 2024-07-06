@@ -8,22 +8,23 @@ import Checkout from "../pages/Checkout";
 import SignUp from "../pages/RegistrationPage";
 import SignIn from "../pages/LoginPage";
 import MealKits from "../pages/MealKits";
+import UserProfile from "../pages/UserProfile";
 
 const Routers = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/home" element={<Home />} />
-        {/*<Route path"/how-this-works" element={</>} />*/}
-      <Route path="/pizzas" element={<MealKits />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/pizzas/:id" element={<PizzaDetails />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-
-    </Routes>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
+            {/* <Route path="/how-this-works" element={<HowThisWorks />} /> */}
+            <Route path="/pizzas" element={<MealKits />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/pizzas/:id" element={<PizzaDetails />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/profile" element={<UserProfile />} />
+        </Routes>
+    );
 };
 
 export default Routers;

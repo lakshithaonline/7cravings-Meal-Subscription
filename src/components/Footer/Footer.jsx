@@ -11,7 +11,6 @@ const Footer = () => {
         <div className="footer__container">
           <div className="footer__logo">
             <img src={logo} alt="logo"/>
-            <h5>7Cravings</h5>
             <p>Your partner in achieving your health goals. Discover our weekly meal kits
               designed for your lifestyle, delivered fresh to your door.</p>
           </div>

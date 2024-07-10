@@ -9,13 +9,14 @@ import SignUp from "../pages/RegistrationPage";
 import SignIn from "../pages/LoginPage";
 import MealKits from "../pages/MealKits";
 import UserProfile from "../pages/UserProfile";
+import HowItWorks from "../pages/HowItWorks";
 
 const Routers = () => {
     return (
         <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
-            {/* <Route path="/how-this-works" element={<HowThisWorks />} /> */}
+             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/pizzas" element={<MealKits />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />

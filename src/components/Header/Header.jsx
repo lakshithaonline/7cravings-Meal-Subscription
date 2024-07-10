@@ -16,6 +16,10 @@ const nav__links = [
     path: "/home",
   },
   {
+    display: "How it works",
+    path: "/how-it-works",
+  },
+  {
     display: "Foods",
     path: "/pizzas",
   },

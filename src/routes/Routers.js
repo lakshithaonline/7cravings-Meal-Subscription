@@ -10,6 +10,7 @@ import SignIn from "../pages/LoginPage";
 import MealKits from "../pages/MealKits";
 import UserProfile from "../pages/UserProfile";
 import HowItWorks from "../pages/HowItWorks";
+import ContactUs from "../pages/ContactUs";
 
 const Routers = () => {
     return (
@@ -20,6 +21,7 @@ const Routers = () => {
             <Route path="/pizzas" element={<MealKits />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/pizzas/:id" element={<PizzaDetails />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />

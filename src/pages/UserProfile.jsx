@@ -2,7 +2,6 @@ import React from 'react';
 import "../styles/user-profile.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
 const UserProfile = () => {
 
     const handleImageUpload = (event) => {
@@ -20,7 +19,7 @@ const UserProfile = () => {
     return (
         <div className="user-profile-container">
             <div className="user-profile-form">
-                <h2>General information</h2>
+                <h2>General Information</h2>
                 <form>
                     <div className="form-row">
                         <div className="form-group">
@@ -57,15 +56,16 @@ const UserProfile = () => {
                             <input type="tel" placeholder="+12-345 678 910"/>
                         </div>
                     </div>
-                    <h2>Address</h2>
+
+                    <h2>Primary Address</h2>
                     <div className="form-row">
                         <div className="form-group">
-                            <label>Address</label>
+                            <label>Address Line 1</label>
                             <input type="text" placeholder="Enter your home address"/>
                         </div>
                         <div className="form-group">
-                            <label>Number</label>
-                            <input type="text" placeholder="No."/>
+                            <label>Address Line 2</label>
+                            <input type="text" placeholder="Apartment, suite, etc. (optional)"/>
                         </div>
                     </div>
                     <div className="form-row">
@@ -85,6 +85,36 @@ const UserProfile = () => {
                             <input type="text" placeholder="ZIP"/>
                         </div>
                     </div>
+
+                    <h2>Secondary Address</h2>
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>Address Line 1</label>
+                            <input type="text" placeholder="Enter your secondary address"/>
+                        </div>
+                        <div className="form-group">
+                            <label>Address Line 2</label>
+                            <input type="text" placeholder="Apartment, suite, etc. (optional)"/>
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="City"/>
+                        </div>
+                        <div className="form-group">
+                            <label>State</label>
+                            <select>
+                                <option value="">Select state</option>
+                                {/* Add state options here */}
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label>ZIP</label>
+                            <input type="text" placeholder="ZIP"/>
+                        </div>
+                    </div>
+
                     <button type="submit" className="save-button">Save All</button>
                 </form>
             </div>

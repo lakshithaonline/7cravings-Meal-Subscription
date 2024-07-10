@@ -1,8 +1,3 @@
-// all images imported from images directory
-// import product_01_image_01 from "../images/product_01.jpg";
-// import product_01_image_02 from "../images/product_01.1.jpg";
-// import product_01_image_03 from "../images/product_01.3.jpg";
-
 import Grilled_Salmon_with_Quinoa from "../images/Grilled_Salmon_with_Quinoa.png";
 import product_02_image_02 from "../images/product_2.2.jpg";
 import product_02_image_03 from "../images/product_2.3.jpg";
@@ -32,7 +27,7 @@ const products = [
     image01: Grilled_Salmon_with_Quinoa,
     image02: product_02_image_02,
     image03: product_02_image_03,
-    meal_category: "High Protein",
+    meal_category: "Protein Boost",
     meal_Time: "Lunch",
     desc: "Delicious grilled salmon served with nutritious quinoa.",
   },
@@ -44,7 +39,7 @@ const products = [
     image01: Vegetarian_Buddha_Bowl,
     image02: product_03_image_02,
     image03: product_03_image_03,
-    meal_category: "Healthy Choices",
+    meal_category: "Light and Green",
     meal_Time: "Dinner",
     desc: "A balanced vegetarian bowl packed with fresh veggies and grains.",
   },
@@ -56,7 +51,7 @@ const products = [
     image01: Protein_Pancakes,
     image02: product_04_image_02,
     image03: product_04_image_03,
-    meal_category: "High Protein",
+    meal_category: "Protein Boost",
     meal_Time: "Breakfast",
     desc: "Fluffy pancakes rich in protein, perfect for a hearty breakfast.",
   },
@@ -68,7 +63,7 @@ const products = [
     image01: Mediterranean_Salad,
     image02: product_05_image_02,
     image03: product_05_image_03,
-    meal_category: "Healthy Choices",
+    meal_category: "Light and Green",
     meal_Time: "Lunch",
     desc: "Fresh salad with Mediterranean flavors and a light dressing.",
   },
@@ -80,7 +75,7 @@ const products = [
     image01: Chicken_Stir_Fry,
     image02: product_06_image_02,
     image03: product_06_image_03,
-    meal_category: "Quick Meals",
+    meal_category: "Yummy Junkies",
     meal_Time: "Dinner",
     desc: "Savory chicken stir-fried with vegetables and served hot.",
   }

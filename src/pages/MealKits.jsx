@@ -27,7 +27,7 @@ import Button from "@mui/material/Button";
 
 const MealKits = () => {
   const [pageNumber, setPageNumber] = useState(0);
-  const [mealCategory, setMealCategory] = useState('All');
+  const [mealCategory, setMealCategory] = useState('All In One');
   const [mealMethod, setMealMethod] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDay, setSelectedDay] = useState('1/7');
@@ -37,7 +37,7 @@ const MealKits = () => {
   // Filter products based on selected meal category and method
   const searchedProduct = products.filter((product) => {
     // Filter by meal category
-    if (mealCategory !== 'All' && product.meal_category !== mealCategory) {
+    if (mealCategory !== 'All In One' && product.meal_category !== mealCategory) {
       return false;
     }
     // Filter by meal method
@@ -178,10 +178,10 @@ const MealKits = () => {
                       onChange={handleCategoryChange}
                       label="Meal Category"
                   >
-                    <MenuItem value="All">All</MenuItem>
-                    <MenuItem value="Quick Meals">Quick Meals</MenuItem>
-                    <MenuItem value="Healthy Choices">Healthy Choices</MenuItem>
-                    <MenuItem value="High Protein">High Protein</MenuItem>
+                    <MenuItem value="All In One">All In One</MenuItem>
+                    <MenuItem value="Yummy Junkies">Yummy Junkies</MenuItem>
+                    <MenuItem value="Protein Boost">Protein Boost</MenuItem>
+                    <MenuItem value="Light and Green">Light and Green</MenuItem>
                   </Select>
                 </FormControl>
               </Box>

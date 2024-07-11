@@ -83,7 +83,8 @@
 }
 
 .reg_now_btn {
-  border: none;
+  border-color: #2E8C66;
+  border-width: 2px;
   outline: none;
   padding: 14px 40px;
   border-radius: 10px;

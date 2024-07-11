@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-import deliveryImg from "../assets/images/heroNEW.png";
+import homeone from "../assets/images/homeOneImg.jpg";
 import "../styles/hero-section.css";
 
 const Home = () => {
@@ -65,10 +65,22 @@ const Home = () => {
 
                                 <div className="rectangle__one">
                                     <div className="rec__one_text">
-                                    <h1> Make your </h1>
-                                    <h1> own </h1>
-                                    <h1> Meal kit </h1>
-                                    <h1> Today </h1>
+                                    <h1 className="rec_one_t"> Make your </h1>
+                                    <h1 className="rec_one_t"> own </h1>
+                                    <h1 className="rec_one_t"> Meal kit </h1>
+                                    <h1 className="rec_one_t"> Today </h1>
+
+                                        <div className="reg_now_sec">
+                                            <Link to="/menu" className="reg_now_btn">
+                                                Start Cooking
+                                            </Link>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <p>
+                                            10% Discount on your first meal kit!!
+                                        </p>
                                     </div>
                                 </div>
                             </Col>
@@ -95,6 +107,7 @@ const Home = () => {
                 <section className="section section-3 vh-100">
                     <Container className="h-100">
                         <Row className="h-100">
+
                             <Col lg="8" md="6" className="h-100">
                                 <h2>Section 3</h2>
                                 <p>Add your content here for Section 3.</p>

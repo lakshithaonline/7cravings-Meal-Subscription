@@ -51,14 +51,54 @@
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+.rectangle__one p {
+  text-align: center;
+  padding-top: 10px;
+  color: #ffffff;
+}
+
+.rec__one_text {
+  padding-top: 20pt;
+}
 
 .rec__one_text h1 {
   font-size: 35pt;
   text-align: center;
-  font-family: "Poppins",sans-serif;
 
 }
 
+
+
+.rec_one_t {
+  font-family: "Poppins Bold", sans-serif;
+  color: #ffffff;
+  line-height: 45px;
+}
+
+.reg_now_sec{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg_now_btn {
+  border: none;
+  outline: none;
+  padding: 14px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  transition: background-color 0.1s, color 0.2s;
+
+}
+
+.reg_now_btn:hover        {
+  color: #35A575;
+
+}
 @media only screen and (max-width: 768px) {
   .hero__content h5 {
     font-size: 1rem;

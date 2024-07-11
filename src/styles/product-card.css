@@ -38,13 +38,13 @@
 .product__price {
   font-weight: 600;
   font-size: 1.2rem;
-  color: #df2020;
+  color: #35A575;
 }
 
 .addTOCART__btn {
   border: none;
   padding: 7px 25px;
-  background: #df2020;
+  background: #35A575;
   color: #fff;
   border-radius: 5px;
   font-size: 0.9rem;

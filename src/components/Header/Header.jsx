@@ -20,7 +20,7 @@ const nav__links = [
     path: "/how-it-works",
   },
   {
-    display: "Foods",
+    display: "MealKits",
     path: "/pizzas",
   },
   {
@@ -68,7 +68,7 @@ const Header = () => {
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo" onClick={() => navigate("/home")}>
-            {/*<img src={logo} alt="logo" />*/}
+            <img src={logo} alt="logo" />
             {/*<h5>Tasty Treat</h5>*/}
           </div>
           {/* ======= menu ======= */}

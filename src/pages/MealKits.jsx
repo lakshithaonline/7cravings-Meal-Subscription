@@ -28,26 +28,31 @@ import Button from "@mui/material/Button";
 const MealKits = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [mealCategory, setMealCategory] = useState('All In One');
-  const [mealMethod, setMealMethod] = useState('All');
+  const [mealMethod, setMealMethod] = useState('All In One');
+  const [dietaryOptions, setDietaryOptions] = useState('All In One');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDay, setSelectedDay] = useState('1/7');
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-  // Filter products based on selected meal category and method
+  // Filter products based on selected meal category, method, and dietary options
   const searchedProduct = products.filter((product) => {
     // Filter by meal category
     if (mealCategory !== 'All In One' && product.meal_category !== mealCategory) {
       return false;
     }
     // Filter by meal method
-    if (mealMethod !== 'All' && product.meal_Time !== mealMethod) {
+    if (mealMethod !== 'All In One' && product.meal_Time !== mealMethod) {
+      return false;
+    }
+    // Filter by dietary options
+    if (dietaryOptions !== 'All In One' && !product.dietary_options.includes(dietaryOptions)) {
       return false;
     }
     // Filter by search query
     return !(searchQuery && !product.title.toLowerCase().includes(searchQuery.toLowerCase()));
-
   });
+
 
 
   const productPerPage = 20;
@@ -60,37 +65,43 @@ const MealKits = () => {
     setPageNumber(selected);
   };
 
-  const handleCategoryChange = (event) => {
-    setMealCategory(event.target.value);
-    setPageNumber(0); // Reset page number when filters change
-  };
-
-  const handleMethodTimeChange = (event) => {
-    setMealMethod(event.target.value);
-    setPageNumber(0); // Reset page number when filters change
-  };
-
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
-    setPageNumber(0); // Reset page number when a search query changes
+    setPageNumber(0);
   };
 
   const handleSearchSubmit = (event) => {
     event.preventDefault(); // Prevent form submission
-    // Optionally, you can perform a search action here if needed
   };
 
+  const handleMethodTimeChange = (event) => {
+    setMealMethod(event.target.value);
+    setPageNumber(0);
+  };
+
+  const handleCategoryChange = (event) => {
+    setMealCategory(event.target.value);
+    setPageNumber(0);
+  };
+
+  const handleDietaryOptionsChange = (event) => {
+    setDietaryOptions(event.target.value);
+    setPageNumber(0);
+  };
+
+
   const handleResetFilters = () => {
-    setMealCategory('All');
-    setMealMethod('All');
     setSearchQuery('');
-    setPageNumber(0); // Reset page number
+    setMealMethod('All In One');
+    setMealCategory('All In One');
+    setDietaryOptions('All In One');
+    setPageNumber(0);
   };
 
   const handleDayChange = (event, newDay) => {
     if (newDay !== null) {
       setSelectedDay(newDay);
-      setPageNumber(0); // Reset page number when day changes
+      setPageNumber(0);
     }
   };
 
@@ -162,7 +173,7 @@ const MealKits = () => {
                       onChange={handleMethodTimeChange}
                       label="Meal Time"
                   >
-                    <MenuItem value="All">All</MenuItem>
+                    <MenuItem value="All In One">All In One</MenuItem>
                     <MenuItem value="Breakfast">Breakfast</MenuItem>
                     <MenuItem value="Lunch">Lunch</MenuItem>
                     <MenuItem value="Dinner">Dinner</MenuItem>
@@ -187,16 +198,18 @@ const MealKits = () => {
               </Box>
               <Box mb={2} width="100%" display="flex" justifyContent="center">
                 <FormControl fullWidth style={{ maxWidth: '350px' }}>
-                  <InputLabel id="meal-method-label">Meal Method</InputLabel>
+                  <InputLabel id="dietary-options-label">Dietary Options</InputLabel>
                   <Select
-                      labelId="meal-method-label"
-                      value={mealMethod}
-                      // onChange={handleMethodTimeChange}
-                      label="Meal Method"
+                      labelId="dietary-options-label"
+                      value={dietaryOptions}
+                      onChange={handleDietaryOptionsChange}
+                      label="Dietary Options"
                   >
-                    <MenuItem value="All">All</MenuItem>
+                    <MenuItem value="All In One">All In One</MenuItem>
                     <MenuItem value="Vegetarian">Vegetarian</MenuItem>
                     <MenuItem value="Gluten-free">Gluten-free</MenuItem>
+                    <MenuItem value="Vegan">Vegan</MenuItem>
+                    <MenuItem value="Pescatarian">Pescatarian</MenuItem>
                   </Select>
                 </FormControl>
               </Box>

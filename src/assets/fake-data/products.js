@@ -29,6 +29,7 @@ const products = [
     image03: product_02_image_03,
     meal_category: "Protein Boost",
     meal_Time: "Lunch",
+    dietary_options: ["Pescatarian", "Gluten-free"],
     desc: "Delicious grilled salmon served with nutritious quinoa.",
   },
 
@@ -41,6 +42,7 @@ const products = [
     image03: product_03_image_03,
     meal_category: "Light and Green",
     meal_Time: "Dinner",
+    dietary_options: ["Vegetarian", "Vegan", "Gluten-free"],
     desc: "A balanced vegetarian bowl packed with fresh veggies and grains.",
   },
 
@@ -53,6 +55,7 @@ const products = [
     image03: product_04_image_03,
     meal_category: "Protein Boost",
     meal_Time: "Breakfast",
+    dietary_options: ["Gluten-free"],
     desc: "Fluffy pancakes rich in protein, perfect for a hearty breakfast.",
   },
 
@@ -65,6 +68,7 @@ const products = [
     image03: product_05_image_03,
     meal_category: "Light and Green",
     meal_Time: "Lunch",
+    dietary_options: ["Vegetarian", "Vegan", "Gluten-free"],
     desc: "Fresh salad with Mediterranean flavors and a light dressing.",
   },
 
@@ -77,6 +81,7 @@ const products = [
     image03: product_06_image_03,
     meal_category: "Yummy Junkies",
     meal_Time: "Dinner",
+    dietary_options: ["Gluten-free"],
     desc: "Savory chicken stir-fried with vegetables and served hot.",
   }
 

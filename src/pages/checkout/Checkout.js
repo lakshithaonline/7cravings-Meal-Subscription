@@ -56,6 +56,7 @@ export default function Checkout() {
     const defaultTheme = createTheme({ palette: { mode } });
     const [activeStep, setActiveStep] = React.useState(0);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
+    const finalizedPrice = useSelector((state) => state.cart.finalizedPrice);
 
     const handleNext = () => {
         setActiveStep(activeStep + 1);
@@ -122,7 +123,7 @@ export default function Checkout() {
                             maxWidth: 500,
                         }}
                     >
-                        <Info totalPrice={totalAmount.toFixed(2)} />
+                        <Info totalPrice={finalizedPrice.toFixed(2)} />
 
                     </Box>
                 </Grid>

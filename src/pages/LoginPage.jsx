@@ -58,7 +58,7 @@ export default function SignIn() {
             }
 
             console.log('User signed in successfully');
-            navigate('/profile');
+            navigate('/home');
         } catch (error) {
             console.error('Error signing in:', error);
             setError(error.message);
@@ -146,14 +146,6 @@ export default function SignIn() {
                             </Grid>
                         </Grid>
                     </Box>
-                    <Button
-                        onClick={handleSignOut}
-                        fullWidth
-                        variant="outlined"
-                        sx={{ mt: 3, mb: 2 }}
-                    >
-                        Sign Out
-                    </Button>
                 </Box>
             </Container>
         </ThemeProvider>

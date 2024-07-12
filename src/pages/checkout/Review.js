@@ -20,6 +20,7 @@ const payments = [
 export default function Review() {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const finalizedPrice = useSelector((state) => state.cart.finalizedPrice);
 
   return (
     <Stack spacing={2}>
@@ -31,7 +32,7 @@ export default function Review() {
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            {totalAmount.toFixed(2)}
+            {finalizedPrice.toFixed(2)}
           </Typography>
         </ListItem>
       </List>

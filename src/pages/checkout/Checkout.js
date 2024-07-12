@@ -251,22 +251,17 @@ export default function Checkout() {
                                 <Typography variant="h5">Thank you for your order!</Typography>
                                 <Typography variant="body1" color="text.secondary">
                                     Your order number is
-                                    <strong>&nbsp;#0001</strong>. We have emailed your order
+                                    <strong>&nbsp;#0001</strong>.<br/> We have emailed your order
                                     confirmation and will update you once its shipped.
                                 </Typography>
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        alignSelf: 'start',
-                                        width: { xs: '100%', sm: 'auto' },
-                                        bgcolor: '#35A575',
-                                        '&:hover': {
-                                            bgcolor: '#2E8C66', // Set the hover background color
-                                        },
-                                    }}
+                                <Typography
+                                    variant="h7"
+                                    color="#35A575"
+                                    sx={{ fontWeight: 'bold' }}
                                 >
-                                    Go to my orders
-                                </Button>
+                                    Your order is on the way.....
+                                </Typography>
+
                             </Stack>
                         ) : (
                             <Stack spacing={2} useFlexGap>

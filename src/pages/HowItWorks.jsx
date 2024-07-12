@@ -6,29 +6,31 @@ import '../styles/how-it-works.css';
 // Array containing the steps and their descriptions
 const steps = [
     {
-        label: 'Step 1',
-        icon: <i className="fas fa-user-plus"></i>,
-        description: 'Sign up by providing your email, creating a password, and filling in some basic information about yourself.',
+        label: <h3 style={{color:"#2E8C66"}}>   Step 1</h3>,
+        icon: <i className="fas fa-user-plus" style={{fontSize:"30px"}}></i>,
+        description: <h5>Create an Account.</h5>,
     },
     {
-        label: 'Step 2',
-        icon: <i className="fas fa-utensils"></i>,
-        description: 'Select a meal plan that fits your needs. You can choose from various options like healthy, fitness, and active meal plans.',
+        label: <h3 style={{color:"#2E8C66"}}>   Step 2</h3>,
+        icon: <i className="fas fa-utensils" style={{fontSize:"30px"}}></i>,
+        description: <h5>Get a closer look into your food goals and select you category.</h5>,
     },
     {
-        label: 'Step 3',
-        icon: <i className="fas fa-list-alt"></i>,
-        description: 'Pick your meals for the week from our diverse menu. Filter by categories such as breakfast, lunch, and dinner to find what suits you best.',
+        label: <h3 style={{color:"#2E8C66"}}>   Step 3</h3>,
+        icon: <i className="fas fa-list-alt" style={{fontSize:"30px"}}></i>,
+        description: <h5>Pick your meals for the week from our diverse menu for you each meal.</h5>,
     },
     {
-        label: 'Step 4',
-        icon: <i className="fas fa-shopping-cart"></i>,
-        description: 'Review your selected meals, proceed to checkout, and enter your delivery details. Your meals will be delivered fresh to your doorstep.',
+        label: <h3 style={{color:"#2E8C66"}}>   Step 4</h3>,
+        icon: <i className="fas fa-shopping-cart" style={{fontSize:"30px"}}></i>,
+        description: <h5>Check if you miss something. No? proceed to checkout.
+            .</h5>,
     },
     {
-        label: 'Step 5',
-        icon: <i className="fas fa-concierge-bell"></i>,
-        description: 'Heat up your meals as per the instructions provided and enjoy! You can always modify your meal selections for the next week.',
+        label: <h3 style={{color:"#2E8C66"}}>   Step 5</h3>,
+        icon: <i className="fas fa-concierge-bell" style={{fontSize:"30px"}}></i>,
+        description: <h5>Enjoy!
+            </h5>,
     },
 ];
 
@@ -54,9 +56,9 @@ const HowItWorks = () => {
             backgroundPosition: 'center',
 
         }}>>
-        <div className="how-it-works-container" style={{background:"white", borderRadius:"20px"}} >
+        <div className="how-it-works-container" style={{background:"rgba(255, 255, 255, 0.8)", borderRadius:"20px"}} >
             <header className="how-it-works-header">
-                <h1>How It Works</h1>
+                <h1 style={{fontFamily:"Poppins"}}>How It Works?</h1>
             </header>
             <Stepper activeStep={activeStep} orientation="vertical">
                 {steps.map((step, index) => (
@@ -91,7 +93,7 @@ const HowItWorks = () => {
                 <Paper square elevation={0} className="stepper-completion">
                     <Typography>All steps completed - you're finished</Typography>
                     <Button onClick={handleReset} variant="contained" color="primary" className="stepper-button">
-                        Reset
+                        Let's Go
                     </Button>
                 </Paper>
             )}

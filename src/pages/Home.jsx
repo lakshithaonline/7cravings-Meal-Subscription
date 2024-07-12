@@ -173,7 +173,7 @@ const Home = () => {
                                 </div>
                                 <div className="ex_men_sec">
                                     <Link to="/mealkits" className="ex_men_btn">
-                                        Explore Menue
+                                        Explore Menu
                                     </Link>
                                 </div>
                             </Col>

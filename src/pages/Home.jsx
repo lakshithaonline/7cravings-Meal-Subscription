@@ -4,6 +4,10 @@ import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import homeone from "../assets/images/homeOneImg.jpg";
 import breadone from '../assets/images/bread(1).png';
+import allinone from "../assets/images/pexels-birseydaha-19602700.jpg";
+import junkies from "../assets/images/pexels-polina-tankilevitch-4109111.jpg";
+import protein from "../assets/images/pexels-tim-douglas-6210959.jpg";
+import green from "../assets/images/Mediterranean_Salad.jpg";
 import "../styles/hero-section.css";
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
@@ -195,93 +199,89 @@ const Home = () => {
                 </section>
 
                 {/* Section 3 */}
-                <section className="section section-3 vh-100">
+                {/*<section className="section section-3 vh-100">*/}
                     <Container className="h-100">
                         <Row className="h-100">
                             <h2 className="Sec__two__heading">Explore By Categories</h2>
 
-                            <Col lg={3} md={6} sm={6} xs={12}>
+                            <Col className="mt-4" lg={3} md={6} sm={6} xs={12}>
                                 <Card sx={{ maxWidth: 345 }}>
                                     <CardActionArea>
                                         <CardMedia
                                             component="img"
                                             height="140"
-                                            image={breadone}
+                                            image={allinone}
                                             alt="green iguana"
                                         />
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="div">
-                                                Lizard
+                                                All in One
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                                species, ranging across all continents except Antarctica
+                                                Our menu features a succulent grilled chicken sandwich, crispy french fries, fresh garden salad, creamy tomato soup, savory beef burger, cheesy pepperoni pizza, tangy Caesar salad, hearty vegetable stew, flavorful shrimp pasta, and decadent chocolate cake. Each dish is crafted with fresh ingredients and bursting with flavor.
                                             </Typography>
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
                             </Col>
 
-                            <Col lg={3} md={6} sm={6} xs={12}>
+                            <Col className="mt-4"  lg={3} md={6} sm={6} xs={12}>
                                 <Card sx={{ maxWidth: 345 }}>
                                     <CardActionArea>
                                         <CardMedia
                                             component="img"
                                             height="140"
-                                            image={breadone}
+                                            image={junkies}
                                             alt="green iguana"
                                         />
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="div">
-                                                Lizard
+                                                Yummy Junkies
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                                species, ranging across all continents except Antarctica
+                                                Indulge in our tempting junk food delights: crispy onion rings, golden-brown chicken nuggets, cheesy mozzarella sticks, spicy buffalo wings, and classic potato chips. Perfect for satisfying cravings, these savory treats are sure to please with their irresistible flavors and crunchy textures.
                                             </Typography>
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
                             </Col>
 
-                            <Col lg={3} md={6} sm={6} xs={12}>
+                            <Col className="mt-4"  lg={3} md={6} sm={6} xs={12}>
                                 <Card sx={{ maxWidth: 345 }}>
                                     <CardActionArea>
                                         <CardMedia
                                             component="img"
                                             height="140"
-                                            image={breadone}
+                                            image={protein}
                                             alt="green iguana"
                                         />
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="div">
-                                                Lizard
+                                                Protein Boost
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                                species, ranging across all continents except Antarctica
+                                                Our menu boasts high-protein offerings such as grilled chicken sandwich, beef burger, shrimp pasta, and vegetable stew. These dishes are rich in protein, promoting muscle recovery and satiety, ideal for health-conscious diners seeking nutritious and satisfying options.
                                             </Typography>
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
                             </Col>
 
-                            <Col lg={3} md={6} sm={6} xs={12}>
+                            <Col className="mt-4 mb-5"  lg={3} md={6} sm={6} xs={12}>
                                 <Card sx={{ maxWidth: 345 }}>
                                     <CardActionArea>
                                         <CardMedia
                                             component="img"
                                             height="140"
-                                            image={breadone}
+                                            image={green}
                                             alt="green iguana"
                                         />
                                         <CardContent>
                                             <Typography gutterBottom variant="h5" component="div">
-                                                Lizard
+                                                Light and Green
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Lizards are a widespread group of squamate reptiles, with over 6,000
-                                                species, ranging across all continents except Antarctica
+                                                Indulge in our menu's nutritious and delicious offerings designed to support your journey towards health and weight loss. From vibrant salads packed with greens and lean proteins to satisfying soups and grilled lean meats, every bite helps you achieve your fitness goals deliciously and guilt-free.
                                             </Typography>
                                         </CardContent>
                                     </CardActionArea>
@@ -289,7 +289,7 @@ const Home = () => {
                             </Col>
                         </Row>
                     </Container>
-                </section>
+                {/*</section>*/}
             </div>
         </Helmet>
     );

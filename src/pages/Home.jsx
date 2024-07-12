@@ -68,16 +68,18 @@ const Home = () => {
                     backgroundImage: 'url("https://images.pexels.com/photos/1600732/pexels-photo-1600732.jpeg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
+
                 }}>
                     <Container className="h-100">
-                        <Row className="h-100" >
+                        <br/><br/>
+                        <Row className="h-100">
                             <Col lg="8" md="6" className="h-100">
                                 <div className="hero__content">
                                     <h5 className="mb-3">Weekly Meal Kits</h5>
                                     <h1 className="mb-4 hero__title">
-                                        Enjoy Personalized Meals <br /> for Every Goal
+                                        Enjoy Personalized Meals <br/> for Every Goal
                                     </h1>
-                                    <p className="mb-4">
+                                    <p className="mb-4 desc">
                                         Discover our diverse menu tailored to your lifestyle. From
                                         healthy choices to high protein and weight loss supportive
                                         meals, we have options to support your goals.
@@ -114,7 +116,7 @@ const Home = () => {
                                         How it works{" "}
                                         <i
                                             className="ri-arrow-right-s-line"
-                                            style={{ marginLeft: "5px" }}
+                                            style={{marginLeft: "5px"}}
                                         ></i>
                                     </Link>
                                 </div>
@@ -146,9 +148,10 @@ const Home = () => {
                 {/* Section 2 */}
                 <section className="section section-2 vh-200">
                     <Container className="h-100">
+                        <br/><br/>
                         <Row className="h-100">
                             <Col lg="4" md="6" className="h-100">
-                                <div style={{ paddingTop:"10px"}}>
+                                <div style={{paddingTop: "10px"}}>
                                     <h2>50+ Recipes Every Week! </h2>
 
                                     <h5>Our expanded menu gives you more choice and even more price flexibility. So you
@@ -158,9 +161,9 @@ const Home = () => {
 
                                     <h5>More time-More work </h5>
                                 </div>
-                                <div className="reg_now_sec">
-                                    <Link to="/menu" className="reg_now_btn">
-                                        Start Cooking
+                                <div className="ex_men_sec">
+                                    <Link to="/menu" className="ex_men_btn">
+                                        Explore Menue
                                     </Link>
                                 </div>
                             </Col>
@@ -168,7 +171,7 @@ const Home = () => {
 
                                 <Box sx={{width: '100%', height: 450, overflowY: 'scroll'}}>
                                     <ImageList variant="masonry" cols={3} gap={8}>
-                                    {itemData.map((item) => (
+                                        {itemData.map((item) => (
                                             <ImageListItem key={item.img}>
                                                 <img
                                                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -189,27 +192,13 @@ const Home = () => {
                 <section className="section section-3 vh-100">
                     <Container className="h-100">
                         <Row className="h-100">
+                            <h2 className="Sec__two__heading">Explore By Categories</h2>
                             <Col lg="8" md="6" className="h-100">
-                                <h2>Section 3</h2>
+
                                 <p>Add your content here for Section 3.</p>
                             </Col>
                             <Col lg="6" md="6" className="h-100">
                                 {/* Add relevant content for Section 3 */}
-                            </Col>
-                        </Row>
-                    </Container>
-                </section>
-
-                {/* Section 4 */}
-                <section className="section section-4 vh-100">
-                    <Container className="h-100">
-                        <Row className="h-100">
-                            <Col lg="4" md="6" className="h-100">
-                                <h2>Section 4</h2>
-                                <p>Add your content here for Section 4.</p>
-                            </Col>
-                            <Col lg="8" md="6" className="h-100">
-                                {/* Add relevant content for Section 4 */}
                             </Col>
                         </Row>
                     </Container>

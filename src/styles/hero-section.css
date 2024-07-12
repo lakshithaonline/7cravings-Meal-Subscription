@@ -81,7 +81,18 @@
   justify-content: center;
   align-items: center;
 }
+.ex_men_sec{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.Sec__two__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+}
 .reg_now_btn {
   border-color: #2E8C66;
   border-width: 2px;
@@ -96,8 +107,36 @@
 
 }
 
+
 .reg_now_btn:hover        {
   color: #35A575;
+
+}
+
+.ex_men_btn {
+  border-color: #2E8C66;
+  border-width: 2px;
+  outline: none;
+  padding: 14px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #2E8C66;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 0.1s, color 0.2s;
+
+}
+
+
+.reg_now_btn:hover        {
+  color: #35A575;
+
+}
+.ex_men_btn:hover       {
+  color: #000000;
+  background: #F5C80D;
+  border-color: #2E8C66;
+  border-width: 2px
 
 }
 @media only screen and (max-width: 768px) {

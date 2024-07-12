@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,28 +14,70 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { auth } from '../services/firebaseConfig';
-import { signInWithEmailAndPassword } from "firebase/auth";
-import {useNavigate} from "react-router-dom";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { login, logout } from '../store/userSlice';
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
     const [error, setError] = useState("");
+    const [rememberMe, setRememberMe] = useState(false);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                dispatch(login({ uid: user.uid, email: user.email }));
+                navigate('/profile');
+            } else {
+                dispatch(logout());
+            }
+        });
+
+        return () => unsubscribe();
+    }, [dispatch, navigate]);
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
         const password = data.get('password');
 
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            dispatch(login({ uid: user.uid, email: user.email })); // Dispatch the login action
+
+            if (rememberMe) {
+                localStorage.setItem('user', JSON.stringify(user));
+            } else {
+                sessionStorage.setItem('user', JSON.stringify(user));
+            }
+
             console.log('User signed in successfully');
             navigate('/profile');
         } catch (error) {
             console.error('Error signing in:', error);
             setError(error.message);
+        }
+    };
+
+    const handleRememberMe = (event) => {
+        setRememberMe(event.target.checked);
+    };
+
+    const handleSignOut = async () => {
+        try {
+            await signOut(auth);
+            dispatch(logout());
+            localStorage.removeItem('user');
+            sessionStorage.removeItem('user');
+            navigate('/signin');
+        } catch (error) {
+            console.error('Error signing out:', error);
         }
     };
 
@@ -80,7 +122,7 @@ export default function SignIn() {
                             autoComplete="current-password"
                         />
                         <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
+                            control={<Checkbox value="remember" color="primary" checked={rememberMe} onChange={handleRememberMe} />}
                             label="Remember me"
                         />
                         <Button
@@ -104,6 +146,14 @@ export default function SignIn() {
                             </Grid>
                         </Grid>
                     </Box>
+                    <Button
+                        onClick={handleSignOut}
+                        fullWidth
+                        variant="outlined"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        Sign Out
+                    </Button>
                 </Box>
             </Container>
         </ThemeProvider>

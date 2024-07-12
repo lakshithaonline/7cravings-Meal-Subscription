@@ -13,7 +13,11 @@ import {
   Typography,
   Accordion,
   AccordionSummary,
-  AccordionDetails, ToggleButton, ToggleButtonGroup, Paper,
+  AccordionDetails,
+  ToggleButton,
+  ToggleButtonGroup,
+  Paper,
+  Button,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import products from '../assets/fake-data/products';
@@ -23,7 +27,9 @@ import ReactPaginate from 'react-paginate';
 import '../styles/pagination.css';
 import SearchIcon from '@mui/icons-material/Search';
 import CommonSection from '../components/UI/common-section/CommonSection';
-import Button from "@mui/material/Button";
+
+import { useSelector, useDispatch } from 'react-redux';
+import {Link} from "react-router-dom";
 
 const MealKits = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -32,6 +38,12 @@ const MealKits = () => {
   const [dietaryOptions, setDietaryOptions] = useState('All In One');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDay, setSelectedDay] = useState('1/7');
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+
+  console.log('cart items', cartItems);
+  console.log('Totally amount', totalAmount);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -42,7 +54,7 @@ const MealKits = () => {
       return false;
     }
     // Filter by meal method
-    if (mealMethod !== 'All In One' && product.meal_Time !== mealMethod) {
+    if (mealMethod !== 'All In One' && product.mealTime !== mealMethod) {
       return false;
     }
     // Filter by dietary options
@@ -53,12 +65,9 @@ const MealKits = () => {
     return !(searchQuery && !product.title.toLowerCase().includes(searchQuery.toLowerCase()));
   });
 
-
-
   const productPerPage = 20;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage);
-
   const pageCount = Math.ceil(searchedProduct.length / productPerPage);
 
   const changePage = ({ selected }) => {
@@ -89,7 +98,6 @@ const MealKits = () => {
     setPageNumber(0);
   };
 
-
   const handleResetFilters = () => {
     setSearchQuery('');
     setMealMethod('All In One');
@@ -104,6 +112,7 @@ const MealKits = () => {
       setPageNumber(0);
     }
   };
+
 
   return (
       <Helmet title="Subscription Meal Kits">
@@ -214,7 +223,7 @@ const MealKits = () => {
                 </FormControl>
               </Box>
               <Box mb={2} width="100%" display="flex" justifyContent="center">
-                <Button variant="contained" color="success" onClick={handleResetFilters} style={{width: '350px'}}>
+                <Button variant="contained" color="success" onClick={handleResetFilters} style={{ width: '350px' }}>
                   Reset Filters
                 </Button>
               </Box>
@@ -226,7 +235,7 @@ const MealKits = () => {
               <Grid container spacing={3}>
                 {displayPage.map((item) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
-                      <ProductCard item={item} />
+                      <ProductCard item={item} selectedDay={selectedDay} />
                     </Grid>
                 ))}
               </Grid>
@@ -243,23 +252,69 @@ const MealKits = () => {
 
             {/* Right side (Accordion for Days) */}
             <Grid item xs={12} lg={3} mt={5} container alignItems="center" direction="column">
-              <Box mb={2} width="80%" justifyContent="center">
+              <Box width="80%">
+                {/* Total Amount Container */}
+                <Box
+                    sx={{
+                      bgcolor: 'success.main',
+                      color: 'success.contrastText',
+                      p: 2,
+                      mb: 2,
+                      borderRadius: 1,
+                      textAlign: 'center',
+                      boxShadow: 'none',
+                    }}
+                >
+                  <Typography variant="h5" gutterBottom>Total Amount: ${totalAmount.toFixed(2)}</Typography>
+                </Box>
+
+                {/* Accordion Sections for Each Day */}
                 {days.map((day, index) => (
-                    <Accordion key={index} style={{ width: '350px' }}>
+                    <Accordion key={index} sx={{ width: '100%', marginBottom: '12px', border: 'none' }}>
                       <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel-${index}-content`} id={`panel-${index}-header`}>
-                        <Typography>{day}</Typography>
+                        <Typography variant="subtitle2" sx={{ fontWeight: 'bold' }}>{day}</Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        {/* Your content for each day goes here */}
-                        {/* Example: */}
-                        <Typography>
-                          Lorem ipsum dolor sit amet, consecrate disciplining elite. Null vitae elite libero.
-                        </Typography>
+                        <Grid container spacing={2}>
+                          {cartItems
+                              .filter(item => item.selectedDay === `${index + 1}/7`) // Filter items for current day
+                              .map(item => (
+                                  <Grid item xs={12} key={item.id}>
+                                    <Paper elevation={0} variant="outlined" sx={{ border: '1px solid #ddd', borderRadius: '4px', boxShadow: 'none' }}>
+                                      <Box p={2}>
+                                        <Typography variant="subtitle2">{item.title}</Typography>
+                                        <Typography variant="body2" color="textSecondary">Meal Time: {item.mealTime}</Typography>
+                                        {/* Add more details as needed */}
+                                      </Box>
+                                    </Paper>
+                                  </Grid>
+                              ))}
+                        </Grid>
                       </AccordionDetails>
                     </Accordion>
                 ))}
+                <Box
+                    component={Link}
+                    to="/cart"
+                    sx={{
+                      bgcolor: 'success.main',
+                      color: 'success.contrastText',
+                      p: 1,
+                      mb: 2,
+                      borderRadius: 1,
+                      height: 50,
+                      textAlign: 'center',
+                      textDecoration: 'none', // Ensure no underline for Link
+                      display: 'block', // Make sure Link takes full width of the Box
+                    }}
+                >
+                  <Typography variant="h5" gutterBottom>
+                    Processed
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
+
           </Grid>
         </Container>
       </Helmet>

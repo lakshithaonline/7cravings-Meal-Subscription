@@ -1,6 +1,19 @@
+/*.hero__content {*/
+/*  padding-top: 70px;*/
+/*  background-color: white;*/
+
+/*}*/
+
 .hero__content {
-  padding-top: 70px;
+  padding-top: 85px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .hero__title {
   font-size: 2.5rem;
@@ -15,6 +28,7 @@
   font-size: 1rem;
   line-height: 30px;
   color: #777;
+
 }
 
 .order__btn {
@@ -24,6 +38,7 @@
   border-radius: 5px;
   cursor: pointer;
   background: #35A575;
+  margin-top: 40px;
   color: #fff;
   font-weight: 600;
 }
@@ -41,6 +56,104 @@
   margin: 40px;
 }
 
+.rectangle__one {
+  width: 475px;
+  height: 400px;
+  background-color: #35A575;
+  /*border: 2px solid #333;*/
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.rectangle__one p {
+  text-align: center;
+  padding-top: 10px;
+  color: #ffffff;
+}
+
+.rec__one_text {
+  padding-top: 20pt;
+}
+
+.rec__one_text h1 {
+  font-size: 35pt;
+  text-align: center;
+
+}
+
+
+
+.rec_one_t {
+  font-family: "Poppins Bold", sans-serif;
+  color: #ffffff;
+  line-height: 45px;
+}
+
+.reg_now_sec{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ex_men_sec{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sec__two__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+}
+.reg_now_btn {
+  border-color: #2E8C66;
+  border-width: 2px;
+  outline: none;
+  padding: 14px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  transition: background-color 0.1s, color 0.2s;
+
+}
+
+
+.reg_now_btn:hover        {
+  color: #35A575;
+
+}
+
+.ex_men_btn {
+  border-color: #35A575;
+  border-width: 2px;
+  outline: none;
+  padding: 14px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #35A575;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 0.1s, color 0.2s;
+
+}
+
+
+.reg_now_btn:hover        {
+  color: #35A575;
+
+}
+.ex_men_btn:hover       {
+  color: #000000;
+  background: #2E8C66;
+  border-color: #2E8C66;
+  border-width: 2px
+
+}
 @media only screen and (max-width: 768px) {
   .hero__content h5 {
     font-size: 1rem;
@@ -66,4 +179,8 @@
     display: block;
     margin: 0 auto;
   }
+}
+
+.box-layout{
+  background-color: white;
 }

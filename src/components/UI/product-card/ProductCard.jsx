@@ -9,11 +9,23 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-const ProductCard = (props) => {
-    const { id, title, image01, price, extraIngredients } = props.item;
+const ProductCard = ({ item, selectedDay }) => {
+    const { id, title, image01, price, extraIngredients, mealTime, hashtags } = item;
     const dispatch = useDispatch();
+    console.log('Selected Day in ProductCard:', selectedDay);
 
     const addToCart = () => {
+        console.log('Adding to cart:', {
+            id,
+            title,
+            image01,
+            price,
+            extraIngredients,
+            mealTime,
+            selectedDay,
+            hashtags,
+        });
+
         dispatch(
             cartActions.addItem({
                 id,
@@ -21,6 +33,8 @@ const ProductCard = (props) => {
                 image01,
                 price,
                 extraIngredients,
+                mealTime,
+                selectedDay,
             })
         );
     };
@@ -29,11 +43,13 @@ const ProductCard = (props) => {
     const ProductCardWrapper = (props) => (
         <Card
             sx={{
+                outline: 1,
+                outlineColor: "#a9a9a9",
                 maxWidth: 300,
                 minHeight: 375,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                 transition: "0.3s",
                 borderRadius: 2,
@@ -46,12 +62,7 @@ const ProductCard = (props) => {
     );
 
     const ProductCardContent = (props) => (
-        <CardContent
-            sx={{
-                padding: "16px",
-            }}
-            {...props}
-        />
+        <CardContent sx={{ padding: "16px" }} {...props} />
     );
 
     const ProductCardTitle = (props) => (
@@ -60,11 +71,45 @@ const ProductCard = (props) => {
             component="div"
             sx={{
                 fontWeight: "bold",
-                marginBottom: 1,
+                marginBottom: 0,
                 fontSize: "1.1rem",
             }}
             {...props}
         />
+    );
+
+    const ProductCardHashtags = ({ hashtags }) => (
+        <div
+            sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "8px",
+                marginTop: "2px",
+            }}
+        >
+            {hashtags.map((tag, index) => (
+                <Typography
+                    key={index}
+                    variant="body2"
+                    color="textSecondary"
+                    sx={{
+                        borderRadius: "3px",
+                        backgroundColor: "#cecece",
+                        padding: "4px 8px",
+                        fontSize: "0.5rem",
+                        whiteSpace: "nowrap",
+                        marginBottom: "2px",
+                        minWidth: "fit-content",
+                        maxWidth: "fit-content",
+                        display: "inline-flex", // Ensure hashtags display in a row
+                        alignItems: "center", // Center content vertically
+                        marginRight: "3px",
+                    }}
+                >
+                    {tag}
+                </Typography>
+            ))}
+        </div>
     );
 
     const ProductCardPrice = (props) => (
@@ -73,7 +118,9 @@ const ProductCard = (props) => {
             color="textSecondary"
             sx={{
                 fontSize: "1rem",
+                fontWeight: "bold",
                 color: "#666",
+                marginTop: 1,
             }}
             {...props}
         />
@@ -86,12 +133,12 @@ const ProductCard = (props) => {
             fullWidth
             sx={{
                 marginBottom: 2,
-                width: '80%',
+                width: "80%",
                 height: 40,
-                marginLeft: 'auto',
-                marginRight: 'auto',
+                marginLeft: "auto",
+                marginRight: "auto",
             }}
-            onClick={addToCart} // Assuming addToCart is defined elsewhere
+            onClick={addToCart}
             {...props}
         >
             Add to Cart
@@ -99,18 +146,20 @@ const ProductCard = (props) => {
     );
 
     return (
+        // component={Link} to={`/mealkits/${id}`}
         <ProductCardWrapper>
-            <CardActionArea component={Link} to={`/pizzas/${id}`}>
+            <CardActionArea>
                 <CardMedia
                     component="img"
                     image={image01}
                     alt={title}
                     sx={{
-                        height: 200,
+                        height: 150,
                     }}
                 />
                 <ProductCardContent>
                     <ProductCardTitle>{title}</ProductCardTitle>
+                    <ProductCardHashtags hashtags={hashtags}/>
                     <ProductCardPrice>${price}</ProductCardPrice>
                 </ProductCardContent>
             </CardActionArea>

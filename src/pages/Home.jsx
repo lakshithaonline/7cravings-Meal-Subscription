@@ -3,10 +3,16 @@ import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import homeone from "../assets/images/homeOneImg.jpg";
+import breadone from '../assets/images/bread(1).png';
 import "../styles/hero-section.css";
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import CardMedia from "@mui/material/CardMedia";
+import CardActionArea from "@mui/material/CardActionArea";
+import CardContent from "@mui/material/CardContent";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
 
 const itemData = [
     {
@@ -72,14 +78,14 @@ const Home = () => {
                 }}>
                     <Container className="h-100">
                         <br/><br/>
-                        <Row className="h-100">
-                            <Col lg="8" md="6" className="h-100">
+                        <Row className="h-100 ">
+                            <Col lg="8" md="6" className="h-25">
                                 <div className="hero__content">
                                     <h5 className="mb-3">Weekly Meal Kits</h5>
-                                    <h1 className="mb-4 hero__title">
+                                    <h1 className="mb-6 hero__title">
                                         Enjoy Personalized Meals <br/> for Every Goal
                                     </h1>
-                                    <p className="mb-4 desc">
+                                    <p className="mb-4 mt-4 desc">
                                         Discover our diverse menu tailored to your lifestyle. From
                                         healthy choices to high protein and weight loss supportive
                                         meals, we have options to support your goals.
@@ -121,7 +127,7 @@ const Home = () => {
                                     </Link>
                                 </div>
                             </Col>
-                            <Col lg="4" md="6" className="h-100">
+                            <Col lg="4" md="6">
                                 <div className="rectangle__one">
                                     <div className="rec__one_text">
                                         <h1 className="rec_one_t"> Make your </h1>
@@ -193,12 +199,93 @@ const Home = () => {
                     <Container className="h-100">
                         <Row className="h-100">
                             <h2 className="Sec__two__heading">Explore By Categories</h2>
-                            <Col lg="8" md="6" className="h-100">
 
-                                <p>Add your content here for Section 3.</p>
+                            <Col lg={3} md={6} sm={6} xs={12}>
+                                <Card sx={{ maxWidth: 345 }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="140"
+                                            image={breadone}
+                                            alt="green iguana"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                Lizard
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                Lizards are a widespread group of squamate reptiles, with over 6,000
+                                                species, ranging across all continents except Antarctica
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
                             </Col>
-                            <Col lg="6" md="6" className="h-100">
-                                {/* Add relevant content for Section 3 */}
+
+                            <Col lg={3} md={6} sm={6} xs={12}>
+                                <Card sx={{ maxWidth: 345 }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="140"
+                                            image={breadone}
+                                            alt="green iguana"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                Lizard
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                Lizards are a widespread group of squamate reptiles, with over 6,000
+                                                species, ranging across all continents except Antarctica
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </Col>
+
+                            <Col lg={3} md={6} sm={6} xs={12}>
+                                <Card sx={{ maxWidth: 345 }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="140"
+                                            image={breadone}
+                                            alt="green iguana"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                Lizard
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                Lizards are a widespread group of squamate reptiles, with over 6,000
+                                                species, ranging across all continents except Antarctica
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </Col>
+
+                            <Col lg={3} md={6} sm={6} xs={12}>
+                                <Card sx={{ maxWidth: 345 }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            height="140"
+                                            image={breadone}
+                                            alt="green iguana"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                Lizard
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                Lizards are a widespread group of squamate reptiles, with over 6,000
+                                                species, ranging across all continents except Antarctica
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
                             </Col>
                         </Row>
                     </Container>

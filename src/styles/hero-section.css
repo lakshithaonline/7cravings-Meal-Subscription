@@ -1,6 +1,19 @@
+/*.hero__content {*/
+/*  padding-top: 70px;*/
+/*  background-color: white;*/
+
+/*}*/
+
 .hero__content {
-  padding-top: 70px;
+  padding-top: 85px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .hero__title {
   font-size: 2.5rem;
@@ -15,6 +28,7 @@
   font-size: 1rem;
   line-height: 30px;
   color: #777;
+
 }
 
 .order__btn {
@@ -24,6 +38,7 @@
   border-radius: 5px;
   cursor: pointer;
   background: #35A575;
+  margin-top: 40px;
   color: #fff;
   font-weight: 600;
 }
@@ -164,4 +179,8 @@
     display: block;
     margin: 0 auto;
   }
+}
+
+.box-layout{
+  background-color: white;
 }

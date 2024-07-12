@@ -17,7 +17,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Paper,
-  Button,
+  Button, AlertTitle,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import products from '../assets/fake-data/products';
@@ -30,6 +30,7 @@ import CommonSection from '../components/UI/common-section/CommonSection';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {Link} from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 const MealKits = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -46,6 +47,20 @@ const MealKits = () => {
   console.log('Totally amount', totalAmount);
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+  // Calculate unique delivery days
+  const uniqueDays = Array.from(new Set(cartItems.map(item => item.selectedDay)));
+  const uniqueDayCount = uniqueDays.length;
+
+  let alertMessage = null;
+  if (uniqueDayCount < 5) {
+    alertMessage = (
+        <Alert severity="warning" sx={{ mb: 2 }}>
+          <AlertTitle>Warning</AlertTitle>
+          Please select at least 5 days to proceed.
+        </Alert>
+    );
+  }
 
   // Filter products based on selected meal category, method, and dietary options
   const searchedProduct = products.filter((product) => {
@@ -158,6 +173,7 @@ const MealKits = () => {
                   >
                     Delivery Day
                   </Typography>
+                  {alertMessage}
                   <ToggleButtonGroup
                       value={selectedDay}
                       exclusive

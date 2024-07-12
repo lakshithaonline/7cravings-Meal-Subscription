@@ -15,13 +15,15 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { auth } from '../services/firebaseConfig';
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
     const [error, setError] = useState("");
+    const navigate = useNavigate(); // React Router history for redirection
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         const email = data.get('email');
@@ -30,7 +32,8 @@ export default function SignUp() {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             console.log('User registered successfully');
-            // Redirect or do something after successful registration
+            // Redirect to profile page or any other page after successful registration
+            navigate('/home'); // Replace with your desired path
         } catch (error) {
             console.error('Error signing up:', error);
             setError(error.message);

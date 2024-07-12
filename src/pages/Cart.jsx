@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 import "../styles/cart-page.css";
@@ -20,7 +20,32 @@ const diningAccessoriesOptions = [
 const Cart = () => {
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
+    const finalizedPrice = useSelector((state) => state.cart.finalizedPrice);
     const dispatch = useDispatch();
+
+    // Calculate subscription fee based on selected days
+    const selectedDaysCount = cartItems.reduce((total, item) => {
+        const days = parseInt(item.selectedDay.split('/')[0]) || 0;
+        return total + days;
+    }, 0);
+
+    // Determine subscription fee based on selectedDaysCount
+    let subscriptionFee = 0;
+    if (selectedDaysCount === 5) {
+        subscriptionFee = 12.99;
+    } else if (selectedDaysCount >= 6) {
+        subscriptionFee = 14.99;
+    } else {
+        subscriptionFee = 0; // No fee or default handling
+    }
+
+    // Dispatch action to update subscription fee in Redux store
+    useEffect(() => {
+        dispatch(cartActions.updateSubscriptionFee(subscriptionFee));
+    }, [dispatch, subscriptionFee]);
+
+    // Determine if Proceed to checkout button should be disabled
+    const disableCheckout = selectedDaysCount < 5;
 
     const handleMealTimeChange = (event, id) => {
         const mealTime = event.target.value;
@@ -40,6 +65,7 @@ const Cart = () => {
     const deleteItem = (id) => {
         dispatch(cartActions.deleteItem(id));
     };
+
 
     return (
         <Helmet title="Cart">
@@ -86,13 +112,18 @@ const Cart = () => {
                                     Subtotal: $
                                     <span className="cart__subtotal">{totalAmount.toFixed(2)}</span>
                                 </h6>
-                                <p>Taxes and shipping will calculate at checkout</p>
+                                <p>Subscription Fee: ${subscriptionFee}</p>
+                                <p>Subscription fee will calculate at checkout</p>
                                 <div className="cart__page-btn">
                                     <button className="addTOCart__btn me-4">
                                         <Link to="/mealkits">Continue Shopping</Link>
                                     </button>
-                                    <button className="addTOCart__btn">
-                                        <Link to="/checkout">Proceed to checkout</Link>
+                                    <button className="addTOCart__btn" disabled={disableCheckout}>
+                                        {disableCheckout ? (
+                                            <span>Proceed to checkout (Please select at least 5 days)</span>
+                                        ) : (
+                                            <Link to="/checkout">Proceed to checkout</Link>
+                                        )}
                                     </button>
                                 </div>
                             </div>
@@ -104,8 +135,8 @@ const Cart = () => {
     );
 };
 
-const Tr = ({ item, handleMealTimeChange, handleDayChange, handleAccessoriesChange, deleteItem }) => {
-    const { id, image01, title, price, mealTime, selectedDay, diningAccessories } = item;
+const Tr = ({item, handleMealTimeChange, handleDayChange, handleAccessoriesChange, deleteItem}) => {
+    const {id, image01, title, price, mealTime, selectedDay, diningAccessories} = item;
 
     return (
         <tr>

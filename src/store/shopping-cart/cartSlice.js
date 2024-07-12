@@ -18,6 +18,7 @@ const setItemFunc = (item, totalAmount) => {
 const initialState = {
   cartItems: items,
   totalAmount: totalAmount,
+  finalizedPrice: 0,
 };
 
 const cartSlice = createSlice({
@@ -103,8 +104,12 @@ const cartSlice = createSlice({
         setItemFunc(state.cartItems, state.totalAmount);
       }
     },
+    updateSubscriptionFee(state, action) {
+      state.subscriptionFee = action.payload;
 
-
+      // Update finalized price
+      state.finalizedPrice = state.totalAmount + state.subscriptionFee;
+    },
   },
 });
 

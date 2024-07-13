@@ -2,7 +2,9 @@
 
 ![Cover Photo](https://github.com/your-username/your-repository/blob/main/images/cover-photo.jpg)
 
-7Cravings is a subscription-based meal delivery web service offering a variety of meal options across different categories, meal times, and dietary preferences. Users can select their meals for each of the 7 days of the week using the Delivery Day selector.
+## Introduction
+
+The 7 Cravings web application uses advanced algorithms and health tracking to customize meal plans based on user inputs, such as dietary preferences, health goals, and meal schedules. This ensures that users receive high-quality meals made to their needs, delivered at times that fit into their busy lives.
 
 ## Technical Overview
 
@@ -37,9 +39,8 @@ To run the project locally, follow these steps:
     npm install
 
 3. Set up Firebase:
-
-**Create a Firebase project at the Firebase Console
-**Add Firebase configuration details to src/firebase/config.js
+ - Create a Firebase project at the Firebase Console
+- Add Firebase configuration details to src/service/firebaseConfig.js
 
 
 ## Contributing
@@ -49,7 +50,7 @@ Contributions are welcome! If you'd like to contribute to 7Cravings, please fork
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
-For any inquiries or feedback, please get in touch with us at support@7cravings.com.
+For any inquiries or feedback, please get in touch with us at lakshithageethmal@gmail.com.
 
 markdown
 Copy code

@@ -1,6 +1,6 @@
-# 7Cravings Web Application
+# 7Cravings - Subscription Service
 
-![Cover Photo](https://github.com/your-username/your-repository/blob/main/images/cover-photo.jpg)
+![Cover Photo](https://github.com/lakshithaonline/7cravings/blob/main/public/cover.png)
 
 ## Introduction
 

@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The 7 Cravings web application uses advanced algorithms and health tracking to customize meal plans based on user inputs, such as dietary preferences, health goals, and meal schedules. This ensures that users receive high-quality meals made to their needs, delivered at times that fit into their busy lives.
+The 7Cravings project is a subscription-based meal delivery service and it uses advanced algorithms and customize meal plans based on user inputs, such as dietary preferences, health goals, and meal schedules. This ensures that users receive high-quality meals made to their needs, delivered at times that fit into their busy lives.
 
 ## Technical Overview
 
@@ -42,6 +42,13 @@ To run the project locally, follow these steps:
  - Create a Firebase project at the Firebase Console
 - Add Firebase configuration details to src/service/firebaseConfig.js
 
+## Screenshots
+<div align="center">
+    <img src="https://github.com/lakshithaonline/7cravings/blob/main/public/SS/Home.png?raw=true" width="300" />
+    <img src="https://github.com/lakshithaonline/7cravings/blob/main/public/SS/User%20Onbording.png" width="300" />
+    <img src="https://github.com/lakshithaonline/7cravings/blob/main/public/SS/MealKits.png" width="300" />
+    <img src="https://github.com/lakshithaonline/7cravings/blob/main/public/SS/Contact%20US.png" width="300" />
+</div>
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to 7Cravings, please fork the repository and create a pull request. For major changes, please open an issue first to discuss what you would like to change.

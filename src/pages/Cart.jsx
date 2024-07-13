@@ -32,9 +32,9 @@ const Cart = () => {
     // Determine subscription fee based on selectedDaysCount
     let subscriptionFee = 0;
     if (selectedDaysCount === 5) {
-        subscriptionFee = 12.99;
+        subscriptionFee = 60;
     } else if (selectedDaysCount >= 6) {
-        subscriptionFee = 14.99;
+        subscriptionFee = 70;
     } else {
         subscriptionFee = 0; // No fee or default handling
     }
@@ -108,11 +108,11 @@ const Cart = () => {
                             )}
 
                             <div className="mt-4">
-                                <h6>
+                                <h7>
                                     Subtotal: $
-                                    <span className="cart__subtotal">{totalAmount.toFixed(2)}</span>
-                                </h6>
-                                <p>Subscription Fee: ${subscriptionFee}</p>
+                                    <span >{totalAmount.toFixed(2)}</span>
+                                </h7>
+                                <h6 className="cart__subtotal">Subscription Fee: ${subscriptionFee}</h6>
                                 <p>Subscription fee will calculate at checkout</p>
                                 <div className="cart__page-btn">
                                     <button className="addTOCart__btn me-4">

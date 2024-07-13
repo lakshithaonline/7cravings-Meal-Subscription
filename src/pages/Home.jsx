@@ -60,11 +60,11 @@ const itemData = [
         title: 'Tomato basil',
     },
     {
-        img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
+        img: 'https://cdn.pixabay.com/photo/2021/06/08/01/26/kottu-6319357_1280.jpg',
         title: 'Sea star',
     },
     {
-        img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
+        img: 'https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_1280.jpg',
         title: 'Bike',
     },
 ];

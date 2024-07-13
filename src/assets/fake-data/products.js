@@ -49,7 +49,7 @@ const products = [
   {
     id: "1",
     title: "Grilled Salmon with Quinoa",
-    price: 12.99,
+    price: 13.99,
     image01: Grilled_Salmon_with_Quinoa,
     image02: product_02_image_02,
     image03: product_02_image_03,
@@ -61,8 +61,8 @@ const products = [
   },
   {
     id: "2",
-    title: "Vegetarian Buddha Bowl",
-    price: 10.49,
+    title: "Vegetarian Bowl",
+    price: 11.99,
     image01: Vegetarian_Buddha_Bowl,
     image02: product_03_image_02,
     image03: product_03_image_03,
@@ -75,7 +75,7 @@ const products = [
   {
     id: "3",
     title: "Protein Pancakes",
-    price: 8.99,
+    price: 9.49,
     image01: Protein_Pancakes,
     image02: product_04_image_02,
     image03: product_04_image_03,
@@ -88,7 +88,7 @@ const products = [
   {
     id: "4",
     title: "Mediterranean Salad",
-    price: 9.99,
+    price: 13.29,
     image01: Mediterranean_Salad,
     image02: product_05_image_02,
     image03: product_05_image_03,
@@ -101,7 +101,7 @@ const products = [
   {
     id: "5",
     title: "Chicken Stir-Fry",
-    price: 11.49,
+    price: 12.39,
     image01: Chicken_Stir_Fry,
     image02: product_06_image_02,
     image03: product_06_image_03,
@@ -114,7 +114,7 @@ const products = [
   {
     id: "6",
     title: "Grilled Tofu Steak",
-    price: 10.99,
+    price: 11,
     image01: Grilled_Tofu_Steak,
     meal_category: "Protein Boost",
     mealTime: "Dinner",
@@ -125,7 +125,7 @@ const products = [
   {
     id: "7",
     title: "Spinach Ricotta Stuffed Shells",
-    price: 9.49,
+    price: 10.99,
     image01: Spinach_Ricotta_Stuffed_Shells,
     meal_category: "Yummy Junkies",
     mealTime: "Dinner",

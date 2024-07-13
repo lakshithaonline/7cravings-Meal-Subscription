@@ -108,7 +108,7 @@ const cartSlice = createSlice({
       state.subscriptionFee = action.payload;
 
       // Update finalized price
-      state.finalizedPrice = state.totalAmount + state.subscriptionFee;
+      state.finalizedPrice =  state.subscriptionFee;
     },
   },
 });

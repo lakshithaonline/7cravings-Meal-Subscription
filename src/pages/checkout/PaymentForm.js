@@ -256,6 +256,14 @@ export default function PaymentForm() {
               Galle
             </Typography>
           </Box>
+            <Box sx={{ display: 'flex', gap: 1 }}>
+                <Typography variant="body1" color="text.secondary">
+                    Remarks:
+                </Typography>
+                <Typography variant="body1" fontWeight="medium">
+                    7cravings_username
+                </Typography>
+            </Box>
         </Box>
       )}
     </Stack>

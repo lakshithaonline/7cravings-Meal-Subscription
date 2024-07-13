@@ -123,7 +123,7 @@ export default function Checkout() {
                             maxWidth: 500,
                         }}
                     >
-                        <Info totalPrice={finalizedPrice.toFixed(2)} />
+                        <Info totalPrice={'$70'} />
 
                     </Box>
                 </Grid>

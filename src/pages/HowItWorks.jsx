@@ -57,6 +57,19 @@ const CustomStepper = styled(Stepper)(({ theme }) => ({
     },
 }));
 
+const SubHeading = styled(Typography)({
+    fontWeight: 'bold',
+    fontSize: '1.2rem',
+    marginTop: '1rem',
+});
+
+const IconWrapper = styled(Box)({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '0.5rem',
+});
+
 export default function HorizontalLinearStepper() {
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
@@ -123,7 +136,7 @@ export default function HorizontalLinearStepper() {
     return (
         <Helmet title="User Onboarding">
             <CommonSection title="User Onboarding"/>
-            <Box sx={{ height: '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <StyledBox>
                 <Grid container justifyContent="center" spacing={2}>
                     <Grid item xs={12} md={8}>
                         <CustomStepper activeStep={activeStep}>
@@ -268,7 +281,7 @@ export default function HorizontalLinearStepper() {
                         </Box>
                     </Grid>
                 </Grid>
-            </Box>
+            </StyledBox>
         </Helmet>
     );
 }

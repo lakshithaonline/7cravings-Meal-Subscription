@@ -1,21 +1,21 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+// import { initializeApp } from "firebase/app";
+// import { getAuth } from "firebase/auth";
+// import { getFirestore } from "firebase/firestore";
 
-//replace the Firebase config 
+// //replace the Firebase config 
 
-const firebaseConfig = {
-    apiKey: "XXXXXXXXXXXXXXXX",
-    authDomain: "XXXXXXXXXXXXXX",
-    projectId: "XXXXXXXXXXXXX",
-    storageBucket: "XXXXXXXXXXXXXX",
-    messagingSenderId: "XXXXXXXXXXXXXXXXX",
-    appId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-};
+// const firebaseConfig = {
+//     apiKey: "XXXXXXXXXXXXXXXX",
+//     authDomain: "XXXXXXXXXXXXXX",
+//     projectId: "XXXXXXXXXXXXX",
+//     storageBucket: "XXXXXXXXXXXXXX",
+//     messagingSenderId: "XXXXXXXXXXXXXXXXX",
+//     appId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+// };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const firestore = getFirestore(app);
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
+// const firestore = getFirestore(app);
 
-export { app, auth, firestore };
+// export { app, auth, firestore };

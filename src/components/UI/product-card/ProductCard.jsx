@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 const ProductCard = ({ item, selectedDay }) => {
-    const { id, title, image01, price, extraIngredients, mealTime, hashtags } = item;
+    const { id, title, image01, price, extraIngredients, mealTime, hashtags, calorie_count } = item;
     const dispatch = useDispatch();
     console.log('Selected Day in ProductCard:', selectedDay);
 
@@ -23,6 +23,7 @@ const ProductCard = ({ item, selectedDay }) => {
             extraIngredients,
             mealTime,
             selectedDay,
+            calorie_count,
             hashtags,
         });
 
@@ -35,6 +36,7 @@ const ProductCard = ({ item, selectedDay }) => {
                 extraIngredients,
                 mealTime,
                 selectedDay,
+                calorie_count,
             })
         );
     };
@@ -112,6 +114,20 @@ const ProductCard = ({ item, selectedDay }) => {
         </div>
     );
 
+    const ProductCalorieCount = (props) => (
+        <Typography
+            variant="body1"
+            color="textSecondary"
+            sx={{
+                fontSize: "1rem",
+                fontWeight: "bold",
+                color: "#666",
+                marginTop: 1,
+            }}
+            {...props}
+        />
+    );
+
     const ProductCardPrice = (props) => (
         <Typography
             variant="body1"
@@ -160,6 +176,7 @@ const ProductCard = ({ item, selectedDay }) => {
                 <ProductCardContent>
                     <ProductCardTitle>{title}</ProductCardTitle>
                     <ProductCardHashtags hashtags={hashtags}/>
+                    <ProductCalorieCount>{calorie_count}</ProductCalorieCount>
                     <ProductCardPrice>${price}</ProductCardPrice>
                 </ProductCardContent>
             </CardActionArea>

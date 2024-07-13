@@ -21,6 +21,7 @@ const Cart = () => {
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
     const finalizedPrice = useSelector((state) => state.cart.finalizedPrice);
+    const totalCalories = useSelector((state) => state.cart.totalCalories);
     const dispatch = useDispatch();
 
     // Calculate subscription fee based on selected days

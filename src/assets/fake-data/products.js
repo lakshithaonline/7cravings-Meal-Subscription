@@ -51,13 +51,14 @@ const products = [
     title: "Grilled Salmon with Quinoa",
     price: 13.99,
     image01: Grilled_Salmon_with_Quinoa,
-    image02: product_02_image_02,
-    image03: product_02_image_03,
+    image02: "product_02_image_02",
+    image03: "product_02_image_03",
     meal_category: "Protein Boost",
     mealTime: "Lunch",
     dietary_options: ["Pescatarian", "Gluten-free"],
     desc: "Delicious grilled salmon served with nutritious quinoa.",
-    hashtags: ["LOW CARB", "LOW-CALORIE", "NO ADDED GLUTEN", "KID FRIENDLY"],
+    calorie_count: 450,
+    hashtags: ["LOW CARB", "LOW-CALORIE", "NO ADDED GLUTEN", "KID FRIENDLY"]
   },
   {
     id: "2",
@@ -70,6 +71,7 @@ const products = [
     mealTime: "Dinner",
     dietary_options: ["Vegetarian", "Vegan", "Gluten-free"],
     desc: "A balanced vegetarian bowl packed with fresh veggies and grains.",
+    calorie_count: 350,
     hashtags: ["LOW-CALORIE",  "NUTRITIOUS","KID FRIENDLY"],
   },
   {
@@ -83,6 +85,7 @@ const products = [
     mealTime: "Breakfast",
     dietary_options: ["Gluten-free"],
     desc: "Fluffy pancakes rich in protein, perfect for a hearty breakfast.",
+    calorie_count: 400,
     hashtags: ["HIGH PROTEIN", "LOW-CALORIE", "NO ADDED GLUTEN", "KID FRIENDLY"],
   },
   {
@@ -96,6 +99,7 @@ const products = [
     mealTime: "Lunch",
     dietary_options: ["Vegetarian", "Vegan", "Gluten-free"],
     desc: "Fresh salad with Mediterranean flavors and a light dressing.",
+    calorie_count: 320,
     hashtags: ["LOW-CALORIE", "VEGAN","NO ADDED GLUTEN", "KID FRIENDLY"],
   },
   {
@@ -109,6 +113,7 @@ const products = [
     mealTime: "Dinner",
     dietary_options: ["Gluten-free"],
     desc: "Savory chicken stir-fried with vegetables and served hot.",
+    calorie_count: 450,
     hashtags: ["HIGH PROTEIN", "LOW-CALORIE", "NO ADDED GLUTEN"],
   },
   {
@@ -120,6 +125,7 @@ const products = [
     mealTime: "Dinner",
     dietary_options: ["Vegetarian", "Vegan", "Gluten-free"],
     desc: "Hearty tofu steak grilled to perfection.",
+    calorie_count: 380,
     hashtags: ["HIGH PROTEIN", "LOW-CALORIE", "VEGETARIAN"],
   },
   {
@@ -131,6 +137,7 @@ const products = [
     mealTime: "Dinner",
     dietary_options: ["Vegetarian"],
     desc: "Delicious stuffed pasta shells with spinach and ricotta cheese.",
+    calorie_count: 420,
     hashtags: ["COMFORT FOOD", "VEGETARIAN", "KID FRIENDLY"],
   },
   {

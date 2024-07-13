@@ -31,6 +31,7 @@ import CommonSection from '../components/UI/common-section/CommonSection';
 import { useSelector, useDispatch } from 'react-redux';
 import {Link} from "react-router-dom";
 import Alert from "@mui/material/Alert";
+import {selectItemsBySelectedDay} from "../store/shopping-cart/cartSlice";
 
 const MealKits = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -42,6 +43,9 @@ const MealKits = () => {
 
   const cartItems = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+
+
+  const { filteredItems, totalCalories } = useSelector(state => selectItemsBySelectedDay(state, selectedDay));
 
   console.log('cart items', cartItems);
   console.log('Totally amount', totalAmount);
@@ -80,7 +84,7 @@ const MealKits = () => {
     return !(searchQuery && !product.title.toLowerCase().includes(searchQuery.toLowerCase()));
   });
 
-  const productPerPage = 20;
+  const productPerPage = 10;
   const visitedPage = pageNumber * productPerPage;
   const displayPage = searchedProduct.slice(visitedPage, visitedPage + productPerPage);
   const pageCount = Math.ceil(searchedProduct.length / productPerPage);
@@ -282,11 +286,13 @@ const MealKits = () => {
                     }}
                 >
                   <Typography variant="h5" gutterBottom>Total Amount: ${totalAmount.toFixed(2)}</Typography>
+                  <Typography variant="h6" gutterBottom>Total Calories: {totalCalories}</Typography>
+
                 </Box>
 
                 {/* Accordion Sections for Each Day */}
                 {days.map((day, index) => (
-                    <Accordion key={index} sx={{ width: '100%', marginBottom: '12px', border: 'none' }}>
+                    <Accordion key={index} sx={{width: '100%', marginBottom: '12px', border: 'none'}}>
                       <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls={`panel-${index}-content`} id={`panel-${index}-header`}>
                         <Typography variant="subtitle2" sx={{ fontWeight: 'bold' }}>{day}</Typography>
                       </AccordionSummary>
